@@ -1,6 +1,8 @@
 package com.example.sudokuxiuhaodingxinlongdai;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,8 +23,8 @@ public class GameActivity extends AppCompatActivity {
     }
     public void setGame(int diff) {
         int[][] arr = new int[9][9];
-        String response = JavaClient.mainA(diff);
-        System.out.println(response + "response");
+        String response = webApi.mainA(diff);
+        System.out.println(response);
         if (response == null) {
             return;
         }
@@ -33,5 +35,10 @@ public class GameActivity extends AppCompatActivity {
             int val = Integer.parseInt(String.valueOf(a[i + 21]));
             arr[x][y] = val;
         }
+        System.out.println(arr[8][3]);
+        System.out.println(arr[8][0]);
+        Intent next = new Intent(GameActivity.this, MainActivity.class);
+        next.putExtra("array", arr);
+        startActivity(next);
     }
 }
