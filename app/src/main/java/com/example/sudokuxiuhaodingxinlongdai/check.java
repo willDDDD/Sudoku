@@ -1,5 +1,8 @@
 package com.example.sudokuxiuhaodingxinlongdai;
 
+/**
+ * to check whether the player wins the game.
+ */
 public class check {
     public static boolean ck(int[][] a) {
         for (int i = 0; i < a.length; i++) {
@@ -104,6 +107,13 @@ public class check {
         return true;
     }
     public static int[][] change(int[][] a) {
+        for (int m = 0; m < a.length; m++) {
+            for (int n = 0; n < a.length; n++) {
+                if (a[m][n] < 0) {
+                    a[m][n] = a[m][n] * -1;
+                }
+            }
+        }
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[0].length; j++) {
                 if (a[i][j] == 1) {

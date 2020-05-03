@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 /**
- * .
+ * choose difficulty and get information through web api.
  */
 public class GameActivity extends AppCompatActivity {
     @Override
@@ -24,9 +24,8 @@ public class GameActivity extends AppCompatActivity {
     public void setGame(int diff) {
         int[][] arr = new int[9][9];
         String response = webApi.mainA(diff);
-        System.out.println(response);
         if (response == null) {
-            return;
+            response = exception.getE(diff);
         }
         char[] a = response.toCharArray();
         for (int i = 39; i < a.length - 10; i += 24) {
@@ -35,8 +34,6 @@ public class GameActivity extends AppCompatActivity {
             int val = Integer.parseInt(String.valueOf(a[i + 21]));
             arr[x][y] = val;
         }
-        System.out.println(arr[8][3]);
-        System.out.println(arr[8][0]);
         Intent next = new Intent(GameActivity.this, MainActivity.class);
         next.putExtra("array", arr);
         startActivity(next);

@@ -6,6 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * home page.
+ */
 public class home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

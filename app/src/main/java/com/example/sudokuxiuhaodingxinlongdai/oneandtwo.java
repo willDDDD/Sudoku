@@ -1,5 +1,8 @@
 package com.example.sudokuxiuhaodingxinlongdai;
 
+/**
+ * switch between 2D and 1D array.
+ */
 public class oneandtwo {
     public static int[] one(int[][] a) {
         int[] r = new int[81];

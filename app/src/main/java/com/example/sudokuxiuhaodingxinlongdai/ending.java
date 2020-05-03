@@ -6,6 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * ending page.
+ */
 public class ending extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

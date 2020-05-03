@@ -16,6 +16,9 @@ import org.w3c.dom.Text;
 import static android.R.layout.activity_list_item;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
+/**
+ * set grid and logic.
+ */
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
         int[][] k = (int[][]) getIntent().getExtras().get("array");
         GridView gw = findViewById(R.id.map);
         int[] arraOne = oneandtwo.one(k);
+        int[] checks = new int[arraOne.length];
+        for (int i = 0; i < arraOne.length; i++) {
+            checks[i] = arraOne[i];
+        }
+        for (int i = 0; i < arraOne.length; i++) {
+            arraOne[i] = arraOne[i] * -1;
+        }
         Integer[] arraOneInteger = InttoInteger.cii(arraOne);
         ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, arraOneInteger);
         gw.setAdapter(adapter);
@@ -31,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         gw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (checks[position] != 0) {
+                    return;
+                }
                 arraOne[position] += 1;
                 arraOne[position] %= 10;
                 if (arraOne[position] == 0) {
@@ -44,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         chk.setOnClickListener(unused -> {
             int[][] c = oneandtwo.two(arraOne);
             int[][] checking = check.change(c);
-            if (check.ck(checking) == false) {
+            if (check.ck(checking) == true) {
                 startActivity(new Intent(this, ending.class));
             }
         });
