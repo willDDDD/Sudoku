@@ -3,7 +3,7 @@ package com.example.sudokuxiuhaodingxinlongdai;
 /**
  * if the network lags or web api did not respond appropriately, we may use the data that we collected before.
  */
-public class exception {
+public class WithException {
     static int a = 0;
     static int b = 0;
     static int c = 0;

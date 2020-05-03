@@ -2,7 +2,6 @@ package com.example.sudokuxiuhaodingxinlongdai;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
         int[][] arr = new int[9][9];
         String response = webApi.mainA(diff);
         if (response == null) {
-            response = exception.getE(diff);
+            response = WithException.getE(diff);
         }
         char[] a = response.toCharArray();
         for (int i = 39; i < a.length - 10; i += 24) {
