@@ -9,7 +9,7 @@ Xinlong Dai
 
 Xiuhao Ding
 
-# This is our youtube introduction link: https://www.youtube.com/watch?v=ohsjbQTZPkA and below is a image flow intro.
+## This is our youtube introduction link: https://www.youtube.com/watch?v=ohsjbQTZPkA and below is a image flow intro.
 
 ## The first page is the start page, you can click Start to continue.
 ![graph](./Start.png)
