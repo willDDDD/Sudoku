@@ -1,5 +1,5 @@
 # Sudoku
-Simple Sudoku Apps
+Simple Sudoku Apps.
 Main files are in app/src/main/java/com/example/sudokuxiuhaodingxinlongdai.
 
 ## The first page is the start page, you can click Start to continue.
