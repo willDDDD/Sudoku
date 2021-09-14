@@ -4,6 +4,9 @@ We use Andriod Studio to construct a simple Sudoku Apps, and using API to get ra
 
 Main files are in app/src/main/java/com/example/sudokuxiuhaodingxinlongdai.
 
+## Default Run
+run "app"
+
 ## Authors and acknowledgment
 Xinlong Dai
 
